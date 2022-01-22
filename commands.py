@@ -20,7 +20,3 @@ def send_help(message):
 def error(message):
     logger.info(f'{message.from_user.username} sent {message.text}')
     bot.reply_to(message, answers.error)    
-
-
-if __name__ == "__main__":    
-    bot.polling(none_stop=True)
