@@ -1,11 +1,10 @@
 import loggerconfig
 import logging
 logger = logging.getLogger(__name__)
-logger.info("Starting bot worker")
+logger.info("Starting bot")
 
-import os
 import time
-from mytelebot import MyTeleBot
+from mytelebot import myTeleBot
 import telebot.types
 import flask
 from config import bot as botconfig
@@ -20,7 +19,7 @@ WEBHOOK_SSL_PRIV = botconfig.webhook_priv  # Path to the ssl private key
 WEBHOOK_URL_BASE = f'https://{WEBHOOK_HOST}'
 WEBHOOK_URL_PATH = f'/api/web-hook/'
 
-bot = MyTeleBot(botconfig.token)
+bot = myTeleBot(botconfig.token)
 bot.remove_webhook()
 time.sleep(0.1)
 logger.debug('remove_webhook')
@@ -42,11 +41,11 @@ def webhook():
     else:
         flask.abort(403)
 
-
 logger.debug("Bot inited.")
 
+import commands
 
-if botconfig.use_webhook:
+if int(botconfig.use_webhook):
     bot.set_webhook(url=WEBHOOK_URL_BASE + WEBHOOK_URL_PATH)
     app.run(host=WEBHOOK_LISTEN,
             port=WEBHOOK_PORT,

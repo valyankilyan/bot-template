@@ -2,8 +2,11 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+
+IMAGE_UPLOAD_FOLDER=os.environ.get("IMAGE_UPLOAD_FOLDER")
+
 class Bot():
-    def Bot(self, token):
+    def __init__(self, token):
         self.token = token
 
 bot = Bot(os.environ.get("BOT_TOKEN"))
