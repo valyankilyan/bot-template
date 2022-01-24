@@ -1,6 +1,5 @@
-import loggerconfig
-import logging
-logger = logging.getLogger(__name__)
+from loggerconfig import getLogger
+logger = getLogger(__name__)
 logger.info("Starting bot")
 
 import time

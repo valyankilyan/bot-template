@@ -1,7 +1,8 @@
-from bot import bot
-import answers
 from loggerconfig import getLogger
 logger = getLogger(__name__)
+
+from bot import bot
+import answers
 logger.info("Starting bot ")
 
 @bot.message_handler(commands=['start'])
