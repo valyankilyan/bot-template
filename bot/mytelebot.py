@@ -25,11 +25,10 @@ class myTeleBot(telebot.TeleBot):
         logger.info(f'photos {sent_data[0]} was sent')
         for i in range(len(photos[:10])):
             if not photos[i].telegram_id:
-                # logger.info(f'file_id = {sent_data[i].photo[0].file_id}')
                 photos[i].telegram_id = sent_data[i].photo[0].file_id
                 
 class Photo():
     def __init__(self, path: str, telegram_id=None):
         self.path = path
         self.telegram_id = telegram_id
-        
+

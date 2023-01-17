@@ -3,7 +3,7 @@ logger = getLogger(__name__)
 logger.info("Starting bot")
 
 import time
-from mytelebot import myTeleBot
+from bot.mytelebot import myTeleBot
 import telebot.types
 import flask
 from config import bot as botconfig
@@ -42,7 +42,7 @@ def webhook():
 
 logger.debug("Bot inited.")
 
-import commands
+import bot.commands as commands
 
 if int(botconfig.use_webhook):
     bot.set_webhook(url=WEBHOOK_URL_BASE + WEBHOOK_URL_PATH)
