@@ -1,11 +1,11 @@
-from sqlalchemy import Column, BigInteger, String, Boolean
+from sqlalchemy import Column, BigInteger, String, Boolean, Integer
 from models import metadata, engine, base
 from models.modelclass import Model
 
 class User(base, Model):
     __tablename__ = 'client'
 
-    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     tg_id = Column(BigInteger, unique=True)
     username = Column(String)
     is_admin = Column(Boolean)
