@@ -23,7 +23,7 @@ def sync_user(bot: myTeleBot, user_id: int, username: str):
     user = get_user_by_tg_id(user_id)
     if user is None:
         save_new_user(user_id, username)
-        send_notification_to_admins(username)
+        send_notification_to_admins(bot, username)
 
 
 def send_notification_to_admins(bot: myTeleBot, new_user_username: str):
