@@ -1,7 +1,7 @@
-from telegram_bot.mytelebot import myTeleBot
-from telegram_bot.bot import init_bot, init_message_handlers, init_webhook
+from bot.mytelebot import myTeleBot
+from bot.bot import init_bot, init_message_handlers, init_webhook
 from logger.logger import getLogger
-from telegram_bot.utils import init_util_bot
+from bot.utils import init_util_bot
 from flask import Flask
 from config.bot import *
 
