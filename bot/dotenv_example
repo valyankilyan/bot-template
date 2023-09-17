@@ -1,7 +1,7 @@
 BOT_TOKEN=
 
 LOGGING_CONFIG_PATH=logging.conf
-DATABASE_URL=sqlite:///app.db
+DATABASE_URL=sqlite:///app.sqlite
 
 USE_WEBHOOK=False
 WEBHOOK_HOST=

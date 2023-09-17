@@ -5,8 +5,8 @@ from models.modelclass import Model
 class User(base, Model):
     __tablename__ = 'client'
 
-    id = Column(BigInteger, primary_key=True)
-    tg_id = Column(BigInteger)
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    tg_id = Column(BigInteger, unique=True)
     username = Column(String)
     is_admin = Column(Boolean)
 
@@ -16,6 +16,6 @@ class User(base, Model):
         self.is_admin = False
 
     def __repr__(self):
-        return f'{self.id}. @{self.username} approved={self.is_approved} declined={self.is_declined} admin={self.is_admin}'
+        return f'{self.id}. @{self.username} admin={self.is_admin}'
 
 metadata.create_all(engine)
